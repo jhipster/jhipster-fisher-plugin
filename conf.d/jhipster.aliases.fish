@@ -20,7 +20,7 @@ function jhclean
     if test -e mvnw
         ./mvnw clean
     else
-        ./gradlew clean
+        ./gradlew clean --no-daemon
     end
 end
 
@@ -28,28 +28,28 @@ function jhrun
     if test -e mvnw
         ./mvnw spring-boot:run
     else
-        ./gradlew bootRun
+        ./gradlew bootRun --no-daemon
     end
 end
 function jhpack
     if test -e mvnw
         ./mvnw -Pprod package
     else
-        ./gradlew -Pprod bootRepackage
+        ./gradlew -Pprod bootRepackage --no-daemon
     end
 end
 function jhdock
     if test -e mvnw
         ./mvnw -Pprod package docker:build
     else
-        ./gradlew -Pprod bootRepackage buildDocker
+        ./gradlew -Pprod bootRepackage buildDocker --no-daemon
     end
 end
 function jhgatling
     if test -e mvnw
         ./mvnw gatling:execute
     else
-        ./gradlew gatlingRun
+        ./gradlew gatlingRun --no-daemon
     end
 end
 
