@@ -1,4 +1,5 @@
 alias jh='yo jhipster'
+alias jhyarn='yo jhipster --yarn'
 alias jhskip='yo jhipster --skip-install'
 alias jhinstall='npm install; and bower install; and gulp install'
 alias jhf='yo jhipster --force'
@@ -31,6 +32,7 @@ function jhrun
         ./gradlew bootRun --no-daemon
     end
 end
+
 function jhpack
     if test -e mvnw
         ./mvnw -Pprod package
@@ -38,6 +40,7 @@ function jhpack
         ./gradlew -Pprod bootRepackage --no-daemon
     end
 end
+
 function jhdock
     if test -e mvnw
         ./mvnw -Pprod package docker:build
@@ -45,6 +48,7 @@ function jhdock
         ./gradlew -Pprod bootRepackage buildDocker --no-daemon
     end
 end
+
 function jhgatling
     if test -e mvnw
         ./mvnw gatling:execute
@@ -74,3 +78,11 @@ alias jhesstop='docker-compose -f src/main/docker/elasticsearch.yml stop'
 alias jhregistryup='docker-compose -f src/main/docker/jhipster-registry.yml up -d'
 alias jhregistrydown='docker-compose -f src/main/docker/jhipster-registry.yml down'
 alias jhregistrystop='docker-compose -f src/main/docker/jhipster-registry.yml stop'
+alias jhkafkaup='docker-compose -f src/main/docker/kafka.yml up -d'
+alias jhkafkadown='docker-compose -f src/main/docker/kafka.yml down'
+alias jhkafkastop='docker-compose -f src/main/docker/kafka.yml stop'
+alias jhkafkalogs='docker-compose -f src/main/docker/kafka.yml logs --follow'
+alias jhconsulup='docker-compose -f src/main/docker/consul.yml up -d'
+alias jhconsuldown='docker-compose -f src/main/docker/consul.yml down'
+alias jhconsulstop='docker-compose -f src/main/docker/consul.yml stop'
+alias jhconsullogs='docker-compose -f src/main/docker/consul.yml logs --follow'
