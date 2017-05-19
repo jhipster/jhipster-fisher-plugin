@@ -24,7 +24,7 @@ alias jhopenshift='jhipster openshift'
 function jhclean
     if test -e mvnw
         ./mvnw clean
-    else test -e gradlew
+    else if test -e gradlew
         ./gradlew clean --no-daemon
     end
 end
