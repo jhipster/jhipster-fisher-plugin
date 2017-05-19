@@ -32,7 +32,7 @@ end
 function jhrun
     if test -e mvnw
         ./mvnw spring-boot:run
-    else test -e gradlew
+    else if test -e gradlew
         ./gradlew bootRun --no-daemon
     end
 end
