@@ -1,4 +1,5 @@
 alias jh='jhipster'
+alias jhlink='yarn link generator-jhipster'
 alias jhyarn='jhipster --yarn'
 alias jhnpm='jhipster --npm'
 alias jhskip='jhipster --skip-install --skip-checks'
@@ -20,6 +21,14 @@ alias jhheroku='jhipster heroku'
 alias jhkubernetes='jhipster kubernetes'
 alias jhaws='jhipster aws'
 alias jhopenshift='jhipster openshift'
+
+function jhinstall
+    if test -e gulpfile.js
+        yarn install && bower install && gulp install
+    else if test tsconfig.json
+        yarn install
+    end
+end
 
 function jhclean
     if test -e mvnw
