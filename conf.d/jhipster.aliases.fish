@@ -10,7 +10,7 @@ alias jhupgrade='jhipster upgrade'
 alias jhjdl='jhipster import-jdl'
 alias jhe='jhipster entity'
 alias jhs='jhipster service'
-alias jhcontroller='jhipster spring-controller
+alias jhcontroller='jhipster spring-controller'
 alias jhlang='jhipster languages'
 alias jhinfo='jhipster info'
 alias jhcompose='jhipster docker-compose'
@@ -25,7 +25,7 @@ alias jhopenshift='jhipster openshift'
 
 function jhinstall
     if test -e gulpfile.js
-        yarn install && bower install && gulp install
+        yarn install; and bower install; and gulp install
     else if test tsconfig.json
         yarn install
     end
