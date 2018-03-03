@@ -59,7 +59,7 @@ function jhpack
     if test -e mvnw
         ./mvnw -Pprod package
     else if test -e gradlew
-        ./gradlew -Pprod bootRepackage --no-daemon
+        ./gradlew -Pprod bootWar --no-daemon
     end
 end
 
@@ -67,7 +67,7 @@ function jhdock
     if test -e mvnw
         ./mvnw -Pprod package dockerfile:build
     else if test -e gradlew
-        ./gradlew -Pprod bootRepackage buildDocker --no-daemon
+        ./gradlew -Pprod bootWar buildDocker --no-daemon
     end
 end
 
