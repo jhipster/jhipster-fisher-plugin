@@ -71,14 +71,6 @@ function jhdock
     end
 end
 
-function jhgatling
-    if test -e mvnw
-        ./mvnw gatling:execute
-    else if test -e gradlew
-        ./gradlew gatlingRun --no-daemon
-    end
-end
-
 alias jhappup='docker-compose -f src/main/docker/app.yml up -d'
 alias jhappdown='docker-compose -f src/main/docker/app.yml down'
 alias jhappstop='docker-compose -f src/main/docker/app.yml stop'
