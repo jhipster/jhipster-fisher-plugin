@@ -64,9 +64,9 @@ end
 
 function jhdock
     if test -e mvnw
-        ./mvnw -Pprod package dockerfile:build
+        ./mvnw package -Pprod jib:dockerBuild
     else if test -e gradlew
-        ./gradlew -Pprod bootWar buildDocker --no-daemon
+        ./gradlew bootWar -Pprod jibDockerBuild --no-daemon
     end
 end
 
