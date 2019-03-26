@@ -43,9 +43,9 @@ end
 
 function jhsonar
     if test -e mvnw
-        ./mvnw clean test sonar:sonar
+        ./mvnw clean verify sonar:sonar
     else if test -e gradlew
-        ./gradlew clean test sonarqube
+        ./gradlew clean check sonarqube
     end
 end
 
