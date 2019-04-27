@@ -13,7 +13,6 @@ alias jhcontroller='jhipster spring-controller'
 alias jhlang='jhipster languages'
 alias jhinfo='jhipster info'
 alias jhcompose='jhipster docker-compose'
-alias jhrancher='jhipster rancher-compose'
 alias jhcicd='jhipster ci-cd'
 
 alias jhcf='jhipster cloudfoundry'
@@ -59,17 +58,17 @@ end
 
 function jhpack
     if test -e mvnw
-        ./mvnw -Pprod package
+        ./mvnw -Pprod verify
     else if test -e gradlew
-        ./gradlew -Pprod bootWar --no-daemon
+        ./gradlew -Pprod bootJar --no-daemon
     end
 end
 
 function jhdock
     if test -e mvnw
-        ./mvnw package -Pprod jib:dockerBuild
+        ./mvnw verify -Pprod jib:dockerBuild
     else if test -e gradlew
-        ./gradlew bootWar -Pprod jibDockerBuild --no-daemon
+        ./gradlew bootJar -Pprod jibDockerBuild --no-daemon
     end
 end
 
